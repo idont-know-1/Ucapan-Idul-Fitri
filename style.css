@@ -1,0 +1,312 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Caveat', cursive;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    overflow: hidden; /* Nonaktifkan scroll */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Layout Utama */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+}
+
+.gif-container {
+    width: 150px; /* Ukuran lingkaran */
+    height: 150px; /* Ukuran lingkaran */
+    border-radius: 50%; /* Membuat pembungkus berbentuk lingkaran */
+    overflow: hidden; /* Sembunyikan bagian gambar yang keluar */
+    margin: 0 auto 20px; /* Pusatkan dan beri jarak bawah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Border opsional */
+    background-color: rgba(255, 255, 255, 0.1); /* Latar belakang opsional */
+}
+
+.gif-container img {
+    width: 100%; /* Pastikan gambar menyesuaikan pembungkus */
+    height: 100%; /* Pastikan gambar menyesuaikan pembungkus */
+    object-fit: cover; /* Isi lingkaran tanpa merusak rasio aspek */
+    display: block; /* Hapus spasi di bawah gambar */
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    max-width: 600px;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+/* Style Slide dan Komponen */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Pastikan slide memiliki tinggi penuh */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+    padding: 20px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Pastikan tinggi container sesuai dengan viewport */
+    overflow: hidden; /* Sembunyikan elemen yang keluar dari container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.slide.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.094);
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a3b3b;
+    transform: translateY(-2px);
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tambahan untuk fitur baru */
+.forgiveness-question {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.forgiveness-question p {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.forgiveness-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+#btnIya, #btnNggak {
+    width: 150px; /* Lebar tombol */
+    padding: 12px 20px; /* Padding tombol */
+    border: none; /* Hapus border */
+    border-radius: 8px; /* Membuat sudut tombol melengkung */
+    font-size: 1.2rem; /* Ukuran font */
+    font-weight: bold; /* Tebalkan teks */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    transition: all 0.3s ease; /* Tambahkan animasi transisi */
+    color: white; /* Warna teks */
+}
+
+#btnIya {
+    background-color: #1c1d1c9a; /* Warna hijau untuk tombol "Iya" */
+}
+
+#btnIya:hover {
+    background-color: #218838; /* Warna hijau lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek hover */
+}
+
+#btnNggak {
+    background-color: #1c1d1c9a; /* Warna merah untuk tombol "Tidak" */
+}
+
+#btnNggak:hover {
+    background-color: #c82333; /* Warna merah lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek hover */
+}
+
+/* Popup Style */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: rgb(45, 44, 44);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 80%;
+    color: #ffffff;
+}
+
+.popup-content h3 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.popup-content button {
+    background-color: #2d2d2d00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #btnIya, #btnNggak {
+        width: 120px; /* Lebar tombol lebih kecil untuk layar kecil */
+        font-size: 1rem; /* Ukuran font lebih kecil */
+        padding: 10px 15px; /* Kurangi padding */
+    }
+    
+    .gif-container {
+        width: 120px; /* Ukuran lingkaran lebih kecil untuk layar kecil */
+        height: 120px;
+    }
+
+    .slide {
+        padding: 10px; /* Kurangi padding untuk layar kecil */
+    }
+
+    .container {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    p {
+        font-size: 1.1rem;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

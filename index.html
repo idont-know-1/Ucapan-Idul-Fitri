@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Idul Fitri 1446 H</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+
+        <div class="slides-container">
+            <!-- Slide 1: Input Nama -->
+            <div id="slide1" class="slide active">
+                <div class="gif-container">
+                    <img src="gif4.gif" alt="Animasi Idul Fitri" onerror="this.src='https://i.gifer.com/7efs.gif'">
+                </div>
+                <h2 class="animate__animated animate__fadeInDown">Assalamu'alaikum! 😊</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Sebentar lagi kita akan merayakan Idul Fitri! Sebelum itu, yuk isi nama kamu dulu biar akrab!</p>
+                <input type="text" id="namaInput" placeholder="Masukkan nama kamu di sini..." class="animate__animated animate__fadeIn animate__delay-2s">
+                <button onclick="nextSlide()" class="animate__animated animate__fadeIn animate__delay-3s">Lanjut</button>
+            </div>
+
+            <!-- Slide 2: Pilihan Puasa -->
+            <div id="slide2" class="slide hidden">
+                <div class="gif-container">
+                    <img src="gif3.gif" alt="Animasi Idul Fitri" onerror="this.src='https://i.gifer.com/7efs.gif'">
+                </div>
+                <h2 id="greeting" class="animate__animated animate__fadeInDown"></h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Sekarang kasih tahu aku, gimana puasamu tahun ini? 😊</p>
+                <div class="button-group animate__animated animate__fadeIn animate__delay-2s">
+                    <button onclick="pilihJawaban('banyak')">Bolong Banyak</button>
+                    <button onclick="pilihJawaban('sedikit')">Bolong Sedikit</button>
+                    <button onclick="pilihJawaban('full')">Full, Alhamdulillah!</button>
+                </div>
+            </div>
+
+            <!-- Slide 3: Pesan Puasa -->
+            <div id="slide3" class="slide hidden">
+                <div class="gif-container">
+                    <img src="gif5.gif" alt="Animasi Idul Fitri" onerror="this.src='https://i.gifer.com/7efs.gif'">
+                </div>
+                <h2 id="pesanPuasa" class="animate__animated animate__fadeInDown"></h2>
+            </div>
+
+            <!-- Slide 4: Ucapan Idul Fitri -->
+            <div id="slide4" class="slide hidden">
+                <div class="gif-container">
+                    <img src="gif2.gif" alt="Animasi Idul Fitri" onerror="this.src='https://i.gifer.com/7efs.gif'">
+                </div>
+                <h2 class="animate__animated animate__bounceIn">Selamat Hari Raya Idul Fitri 1446 H! 🌙✨</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Minal Aidzin wal Faizin, mohon maaf lahir dan batin. Semoga kebahagiaan dan keberkahan selalu menyertai kita semua. 💖</p>
+                
+                <div class="forgiveness-question animate__animated animate__fadeIn animate__delay-2s">
+                    <p>Dimaafkan nggak nih?</p>
+                    <div class="forgiveness-buttons">
+                        <button id="btnIya">Iya!</button>
+                        <button id="btnNggak">Nggak</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="thankYouPopup" class="popup hidden">
+        <div class="popup-content">
+            <div class="gif-container">
+                <img src="gif6.gif" alt="Animasi Idul Fitri" onerror="this.src='https://i.gifer.com/7efs.gif'">
+            </div>
+            <h3>Makasih ya!</h3>
+            <p>Semoga kamu selalu diberi keberkahan dan keselamatan</p>
+            <button onclick="closePopup()">Tutup</button>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop autoplay>
+        <source src="background.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
